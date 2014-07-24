@@ -1,36 +1,31 @@
 # rps
 
-FIXME: description
+Simple Rock Paper Scissors game written in Clojure
 
-## Installation
+## Build / Usage
 
-Download from http://example.com/FIXME.
+This is played on the terminal, so if you run it with Leiningen, use trampoline run:
 
-## Usage
+    $ lein trampoline run
 
-FIXME: explanation
+Or, alternatively, package it into a jar and run it with java:
 
-    $ java -jar rps-0.1.0-standalone.jar [args]
+    $ lein uberjar
+    $ java -jar ./target/rps-*.jar
 
 ## Options
 
-FIXME: listing of options this app accepts.
+Use keys R, P, and S to pick your weapon.  Any other key will exit.
 
-## Examples
+## Example Output
 
-...
+    (R)ock, (P)aper, (S)cissors?
+    Your paper defeats computer's rock. YOU WIN!
+    
+    (R)ock, (P)aper, (S)cissors?
+    Computer's paper defeats your rock. YOU LOSE!
+    
+    (R)ock, (P)aper, (S)cissors?
+    We both picked scissors. DRAW!
 
-### Bugs
 
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2014 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
