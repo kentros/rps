@@ -5,26 +5,14 @@
 
 (def what-beats {:rock :paper, :paper :scissors, :scissors :rock})
 
-(defn winner [p1 p2]
-  (cond
-    (or
-      (and (= p1 :rock) (= p2 :scissors))
-      (and (= p1 :paper) (= p2 :rock)) 
-      (and (= p1 :scissors) (= p2 :paper))) p1
-    (or
-      (and (= p2 :rock) (= p1 :scissors))
-      (and (= p2 :paper) (= p1 :rock)) 
-      (and (= p2 :scissors) (= p1 :paper))) p2
-    :else nil))
-
 (defn battle [human comp]
   (let [h (name human)
         c (name comp)]
     (cond
       (= human comp) (println (format "We both picked %s. DRAW!" c))
-      (= human (winner human comp))
+      (not= comp (what-beats human))
         (println (format "Your %s defeats computer's %s. YOU WIN!" h c))
-      (= comp (winner human comp))
+      (not= human (what-beats comp))
         (println (format "Computer's %s defeats your %s. YOU LOSE!" c h))
       :else (println (format "Wat? %s and %s ?" h c)))))
 
