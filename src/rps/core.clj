@@ -10,9 +10,9 @@
         c (name comp)]
     (cond
       (= human comp) (println (format "We both picked %s. DRAW!" c))
-      (not= comp (what-beats human))
+      (= human (what-beats comp))
         (println (format "Your %s defeats computer's %s. YOU WIN!" h c))
-      (not= human (what-beats comp))
+      (= comp (what-beats human))
         (println (format "Computer's %s defeats your %s. YOU LOSE!" c h))
       :else (println (format "Wat? %s and %s ?" h c)))))
 
@@ -32,7 +32,6 @@
           (battle rps (what-beats (weighted freqs)))
           (recur (assoc freqs rps (inc (rps freqs)))))
         (println "Game Over Man!  Game Over!"))))
-  
 
 (defn -main
   "Rock, Paper, Scissors!"
