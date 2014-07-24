@@ -41,12 +41,7 @@
           rps (key->rps (.readCharacter term System/in))]
       (if-not (nil? rps)
         (do 
-          (battle rps 
-(what-beats (weighted freqs))
-)
-
-
- 
+          (battle rps (what-beats (weighted freqs)))
           (recur (assoc freqs rps (inc (rps freqs)))))
         (println "Game Over Man!  Game Over!"))))
   
